@@ -2,7 +2,7 @@ High-level architecture.
 The following diagram provides a high-level view of how BigBlueButton's components work together.
 We'll break down each component in more detail below.
 HTML5 client.
-The HTML5 client is a single page, responsive web application that is built upon the following components: React.js for rendering the user interface in an efficient manner, WebRTC for sending/receiving audio and video.
+The HTML5 client is a single page, responsive web application that is built upon the following components, React.js for rendering the user interface in an efficient manner, WebRTC for sending/receiving audio and video.
 The HTML5 client connects directly with the BigBlueButton server over port 443 (SSL), from loading the BigBlueButton client to making a web socket connection.
 These connections are all handled by nginx.
 The HTML5 server sits behind nginx.
@@ -24,7 +24,7 @@ The breakdown of functionality between front-end and back-end is as follows.
 Frontends receive the ValidateAuthTokenResp event to complete authentication.
 Frontends collect subscriptions and publishers.
 Frontends receive other DDP events including method calls to send events to akka-apps.
-Frontends handle completely the Streamer redis events: Cursor, Annotations, External video share.
+Frontends handle completely the Streamer redis events, i.e., Cursor, Annotations, External video share.
 Frontends still require MeetingStarted and MeetingEnded events to create/destroy per-meeting event processing queues.
 Backends handle all the non-streamer events.
 If more than one backend is running, bbb-web splits the load in round-robin fashion by assigning an instanceId.
